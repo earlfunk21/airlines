@@ -6,46 +6,8 @@ $db = new DBHelper(DBHelper::getConnection());
 ?>
 
 <div class="wrapper">
-    <div class="sidebar">
-        <div class="sidebar-wrapper">
-            <div class="logo">
-                <a href="javascript:void(0)" class="simple-text logo-mini">
-                    CT
-                </a>
-                <a href="javascript:void(0)" class="simple-text logo-normal">
-                    Airlines
-                </a>
-            </div>
-            <ul class="nav">
-                <li class="active ">
-                    <a href="index.php">
-                        <i class="tim-icons icon-chart-pie-36"></i>
-                        <p>Dashboard</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="tim-icons icon-atom"></i>
-                        <p>Add new User</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="tim-icons icon-pin"></i>
-                        <p>Add new Admin</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="tim-icons icon-single-02"></i>
-                        <p>About Me</p>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <?php include 'includes/sidebar.php' ?>
     <div class="main-panel">
-        <!-- End Navbar -->
         <div class="content">
             <div class="row">
                 <div class="col-lg-6 col-md-12">
@@ -105,7 +67,7 @@ $db = new DBHelper(DBHelper::getConnection());
                 <div class="col-lg-6 col-md-12">
                     <div class="card ">
                         <div class="card-header">
-                            <h4 class="card-title"> Simple Table</h4>
+                            <h4 class="card-title">Admin</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -113,118 +75,224 @@ $db = new DBHelper(DBHelper::getConnection());
                                     <thead class=" text-primary">
                                         <tr>
                                             <th>
-                                                Name
+                                                ADMIN ID
                                             </th>
                                             <th>
-                                                Country
+                                                EMAIL
                                             </th>
                                             <th>
-                                                City
+                                                PASSWORD
                                             </th>
                                             <th class="text-center">
-                                                Salary
+                                                INFORMATION ID
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php foreach($db->get_admins() as $admin): ?>
                                         <tr>
                                             <td>
-                                                Dakota Rice
+                                                <?= $admin['id'] ?>
                                             </td>
                                             <td>
-                                                Niger
+                                                <?= $admin['email'] ?>
                                             </td>
                                             <td>
-                                                Oud-Turnhout
+                                                <?= $admin['password'] ?>
                                             </td>
                                             <td class="text-center">
-                                                $36,738
+                                                <?= $admin['info_id'] ?>
                                             </td>
                                         </tr>
+                                        <?php endforeach;?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="card ">
+                        <div class="card-header">
+                            <h4 class="card-title">Crew</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table tablesorter " id="">
+                                    <thead class=" text-primary">
+                                        <tr>
+                                            <th>
+                                                CREW ID
+                                            </th>
+                                            <th>
+                                                POSITION
+                                            </th>
+                                            <th>
+                                                EXPERIENCE
+                                            </th>
+                                            <th class="text-center">
+                                                INFORMATION ID
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach($db->get_crews() as $crew): ?>
                                         <tr>
                                             <td>
-                                                Minerva Hooper
+                                                <?= $crew['id'] ?>
                                             </td>
                                             <td>
-                                                Curaçao
+                                                <?= $crew['position'] ?>
                                             </td>
                                             <td>
-                                                Sinaai-Waas
+                                                <?= $crew['experience'] ?>
                                             </td>
                                             <td class="text-center">
-                                                $23,789
+                                                <?= $crew['info_id'] ?>
                                             </td>
                                         </tr>
+                                        <?php endforeach;?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="card ">
+                        <div class="card-header">
+                            <h4 class="card-title">Passenger</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table tablesorter " id="">
+                                    <thead class=" text-primary">
+                                        <tr>
+                                            <th>
+                                                PASSENGER ID
+                                            </th>
+                                            <th>
+                                                SEAT NUMBER
+                                            </th>
+                                            <th class="text-center">
+                                                TICKET ID
+                                            </th>
+                                            <th class="text-center">
+                                                INFORMATION ID
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach($db->get_passengers() as $passenger): ?>
                                         <tr>
                                             <td>
-                                                Sage Rodriguez
+                                                <?= $passenger['id'] ?>
                                             </td>
                                             <td>
-                                                Netherlands
-                                            </td>
-                                            <td>
-                                                Baileux
+                                                <?= $passenger['seat_number'] ?>
                                             </td>
                                             <td class="text-center">
-                                                $56,142
+                                                <?= $passenger['ticket_id'] ?>
+                                            </td>
+                                            <td class="text-center">
+                                                <?= $passenger['info_id'] ?>
                                             </td>
                                         </tr>
+                                        <?php endforeach;?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="card ">
+                        <div class="card-header">
+                            <h4 class="card-title">Aircraft</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table tablesorter " id="">
+                                    <thead class=" text-primary">
+                                        <tr>
+                                            <th>
+                                                AIRCRAFT ID
+                                            </th>
+                                            <th>
+                                                MODEL
+                                            </th>
+                                            <th>
+                                                CAPACITY
+                                            </th>
+                                            <th>
+                                                MANUFACTURER
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach($db->get_aircrafts() as $aircraft): ?>
                                         <tr>
                                             <td>
-                                                Philip Chaney
+                                                <?= $aircraft['id'] ?>
                                             </td>
                                             <td>
-                                                Korea, South
-                                            </td>
-                                            <td>
-                                                Overland Park
+                                                <?= $aircraft['model'] ?>
                                             </td>
                                             <td class="text-center">
-                                                $38,735
+                                                <?= $aircraft['capacity'] ?>
+                                            </td>
+                                            <td class="text-center">
+                                                <?= $aircraft['manufacturer'] ?>
                                             </td>
                                         </tr>
+                                        <?php endforeach;?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="card ">
+                        <div class="card-header">
+                            <h4 class="card-title">TICKET</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table tablesorter " id="">
+                                    <thead class=" text-primary">
+                                        <tr>
+                                            <th>
+                                                TICKET ID
+                                            </th>
+                                            <th>
+                                                PASSENGER ID
+                                            </th>
+                                            <th>
+                                                SEAT NUMBER
+                                            </th>
+                                            <th>
+                                                ARRIVAL DATE
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach($db->get_tickets() as $tickets): ?>
                                         <tr>
                                             <td>
-                                                Doris Greene
+                                                <?= $tickets['id'] ?>
                                             </td>
                                             <td>
-                                                Malawi
-                                            </td>
-                                            <td>
-                                                Feldkirchen in Kärnten
+                                                <?= $tickets['passenger_id'] ?>
                                             </td>
                                             <td class="text-center">
-                                                $63,542
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                Mason Porter
-                                            </td>
-                                            <td>
-                                                Chile
-                                            </td>
-                                            <td>
-                                                Gloucester
+                                                <?= $tickets['seat_number'] ?>
                                             </td>
                                             <td class="text-center">
-                                                $78,615
+                                                <?= $tickets['arrival_date'] ?>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                Jon Porter
-                                            </td>
-                                            <td>
-                                                Portugal
-                                            </td>
-                                            <td>
-                                                Gloucester
-                                            </td>
-                                            <td class="text-center">
-                                                $98,615
-                                            </td>
-                                        </tr>
+                                        <?php endforeach;?>
                                     </tbody>
                                 </table>
                             </div>

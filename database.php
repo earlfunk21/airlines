@@ -17,8 +17,12 @@ class Database {
 
     function query($sql){
         $result = $this->conn->query($sql);
-        $this->conn->close();
         return $result;
+    }
+
+    function __destruct()
+    {
+        $this->conn->close();
     }
     
 }
