@@ -10,6 +10,8 @@ $db = new DBHelper(DBHelper::getConnection());
     <div class="main-panel">
         <div class="content">
             <div class="row">
+
+                <!-- Personal Info -->
                 <div class="col-lg-6 col-md-12">
                     <div class="card ">
                         <div class="card-header">
@@ -64,6 +66,7 @@ $db = new DBHelper(DBHelper::getConnection());
                         </div>
                     </div>
                 </div>
+                <!-- Admin -->
                 <div class="col-lg-6 col-md-12">
                     <div class="card ">
                         <div class="card-header">
@@ -111,6 +114,7 @@ $db = new DBHelper(DBHelper::getConnection());
                         </div>
                     </div>
                 </div>
+                <!-- Crew -->
                 <div class="col-lg-6 col-md-12">
                     <div class="card ">
                         <div class="card-header">
@@ -158,6 +162,7 @@ $db = new DBHelper(DBHelper::getConnection());
                         </div>
                     </div>
                 </div>
+                <!-- Passenger -->
                 <div class="col-lg-6 col-md-12">
                     <div class="card ">
                         <div class="card-header">
@@ -205,6 +210,7 @@ $db = new DBHelper(DBHelper::getConnection());
                         </div>
                     </div>
                 </div>
+                <!-- Aircraft -->
                 <div class="col-lg-6 col-md-12">
                     <div class="card ">
                         <div class="card-header">
@@ -252,6 +258,7 @@ $db = new DBHelper(DBHelper::getConnection());
                         </div>
                     </div>
                 </div>
+                <!-- Ticket -->
                 <div class="col-lg-6 col-md-12">
                     <div class="card ">
                         <div class="card-header">
