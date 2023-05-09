@@ -1,6 +1,7 @@
 <?php
 require_once 'includes/header.php';
 require_once 'db_helper.php';
+include 'includes/security.php';
 
 $db = new DBHelper(DBHelper::getConnection());
 

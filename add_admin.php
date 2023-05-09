@@ -3,6 +3,7 @@ require_once 'includes/header.php';
 require_once 'db_helper.php';
 
 $db = new DBHelper(DBHelper::getConnection());
+include 'includes/security.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $db->add_admin($_POST["email"], $_POST["password"], $_POST["info_id"]);

@@ -3,8 +3,8 @@
 class Database {
     private static $servername = "localhost";
     private static $username = "root";
-    private static $password = "ilovepython";
-    private static $dbname = "dbairlines";
+    private static $password = "";
+    private static $dbname = "dbg2nobe";
 
     protected $conn;
 

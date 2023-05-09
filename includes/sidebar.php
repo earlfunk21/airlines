@@ -52,11 +52,20 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="about_me.php">
                     <i class="tim-icons icon-single-02"></i>
                     <p>About Me</p>
                 </a>
             </li>
+            <li>
+                <a href="edit_profile.php">
+                    <i class="tim-icons icon-single-02"></i>
+                    <p>Edit Profile</p>
+                </a>
+            </li>
         </ul>
+        <div class="text-center">
+            <a href="logout.php" type="button" class="btn btn-primary mb-3">Logout</a>
+        </div>
     </div>
 </div>

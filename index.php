@@ -3,6 +3,7 @@ require_once 'includes/header.php';
 require_once 'db_helper.php';
 
 $db = new DBHelper(DBHelper::getConnection());
+include 'includes/security.php';
 ?>
 
 <div class="wrapper">
@@ -20,7 +21,7 @@ $db = new DBHelper(DBHelper::getConnection());
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table tablesorter " id="">
-                                    <thead class=" text-primary">
+                                    <thead class="text-primary">
                                         <tr>
                                             <th>
                                                 ID
