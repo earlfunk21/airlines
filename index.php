@@ -1,14 +1,25 @@
 <?php
 require_once 'includes/header.php';
 require_once 'db_helper.php';
+include 'includes/security.php';
 
 $db = new DBHelper(DBHelper::getConnection());
-include 'includes/security.php';
+
 ?>
 
 <div class="wrapper">
     <?php include 'includes/sidebar.php' ?>
     <div class="main-panel">
+
+        <?php if (isset($_SESSION["message"])) : ?>
+        <div class="alert alert-success">
+            <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                <i class="tim-icons icon-simple-remove"></i>
+            </button>
+            <b><?= $_SESSION["message"]; ?></b>
+        </div>
+        <?php unset($_SESSION["message"]); ?>
+        <?php endif; ?>
         <div class="content">
             <div class="row">
 
@@ -41,7 +52,7 @@ include 'includes/security.php';
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach($db->get_users() as $user): ?>
+                                        <?php foreach ($db->get_users() as $user) : ?>
                                         <tr>
                                             <td>
                                                 <?= $user['id'] ?>
@@ -60,7 +71,7 @@ include 'includes/security.php';
                                                 <?= $user['nationality'] ?>
                                             </td>
                                         </tr>
-                                        <?php endforeach;?>
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -93,7 +104,7 @@ include 'includes/security.php';
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach($db->get_admins() as $admin): ?>
+                                        <?php foreach ($db->get_admins() as $admin) : ?>
                                         <tr>
                                             <td>
                                                 <?= $admin['id'] ?>
@@ -108,7 +119,7 @@ include 'includes/security.php';
                                                 <?= $admin['info_id'] ?>
                                             </td>
                                         </tr>
-                                        <?php endforeach;?>
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -141,7 +152,7 @@ include 'includes/security.php';
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach($db->get_crews() as $crew): ?>
+                                        <?php foreach ($db->get_crews() as $crew) : ?>
                                         <tr>
                                             <td>
                                                 <?= $crew['id'] ?>
@@ -156,7 +167,7 @@ include 'includes/security.php';
                                                 <?= $crew['info_id'] ?>
                                             </td>
                                         </tr>
-                                        <?php endforeach;?>
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -189,7 +200,7 @@ include 'includes/security.php';
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach($db->get_passengers() as $passenger): ?>
+                                        <?php foreach ($db->get_passengers() as $passenger) : ?>
                                         <tr>
                                             <td>
                                                 <?= $passenger['id'] ?>
@@ -204,7 +215,7 @@ include 'includes/security.php';
                                                 <?= $passenger['info_id'] ?>
                                             </td>
                                         </tr>
-                                        <?php endforeach;?>
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -237,7 +248,7 @@ include 'includes/security.php';
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach($db->get_aircrafts() as $aircraft): ?>
+                                        <?php foreach ($db->get_aircrafts() as $aircraft) : ?>
                                         <tr>
                                             <td>
                                                 <?= $aircraft['id'] ?>
@@ -252,7 +263,7 @@ include 'includes/security.php';
                                                 <?= $aircraft['manufacturer'] ?>
                                             </td>
                                         </tr>
-                                        <?php endforeach;?>
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -285,7 +296,7 @@ include 'includes/security.php';
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach($db->get_tickets() as $tickets): ?>
+                                        <?php foreach ($db->get_tickets() as $tickets) : ?>
                                         <tr>
                                             <td>
                                                 <?= $tickets['id'] ?>
@@ -300,7 +311,7 @@ include 'includes/security.php';
                                                 <?= $tickets['arrival_date'] ?>
                                             </td>
                                         </tr>
-                                        <?php endforeach;?>
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>

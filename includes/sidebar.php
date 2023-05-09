@@ -1,10 +1,11 @@
+<?php
+$user = $db->get_user($_SESSION["user"]);
+?>
 <div class="sidebar">
     <div class="sidebar-wrapper">
         <div class="logo">
-            <a href="javascript:void(0)" class="simple-text logo-mini">
-                CT
-            </a>
-            <a href="javascript:void(0)" class="simple-text logo-normal">
+            <h6><?= $user["firstname"]; ?> <?= $user["lastname"]; ?> </h6>
+            <a href="javascript:void(0)" class="h3 simple-text logo-normal text-center">
                 Airlines
             </a>
         </div>
@@ -59,13 +60,17 @@
             </li>
             <li>
                 <a href="edit_profile.php">
-                    <i class="tim-icons icon-single-02"></i>
+                    <i class="tim-icons icon-pencil"></i>
                     <p>Edit Profile</p>
                 </a>
             </li>
         </ul>
         <div class="text-center">
             <a href="logout.php" type="button" class="btn btn-primary mb-3">Logout</a>
+        </div>
+
+        <div class="text-center">
+            <p>&copy; Earl B. Nobe BSIT-2.</p>
         </div>
     </div>
 </div>

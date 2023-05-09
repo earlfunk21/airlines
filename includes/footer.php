@@ -1,8 +1,4 @@
-<div class="footer">
-    <div class="text-center">
-        <p>&copy; Earl B. Nobe BSIT-2.</p>
-    </div>
-</div>
+
 <!--   Core JS Files   -->
 <script src="assets/js/core/jquery.min.js"></script>
 <script src="assets/js/core/popper.min.js"></script>
