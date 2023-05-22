@@ -17,9 +17,9 @@ $user = $db->get_user($_SESSION["user"]);
                 </a>
             </li>
             <li>
-                <a href="add_user.php">
+                <a href="add_personal_info.php">
                     <i class="tim-icons icon-simple-add"></i>
-                    <p>Add new User</p>
+                    <p>Add new Personal Info</p>
                 </a>
             </li>
             <li>

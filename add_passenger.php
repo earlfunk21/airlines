@@ -6,14 +6,14 @@ include 'includes/security.php';
 $db = new DBHelper(DBHelper::getConnection());
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  $db->add_passenger($_POST["seat_number"], $_POST["ticket_id"], $_POST["info_id"]);
-  header('Location: index.php');
+    $db->add_passenger($_POST["seat_number"], $_POST["ticket_id"], $_POST["info_id"]);
+    header('Location: index.php');
 }
 
 ?>
 
 <div class="wrapper">
-    <?= include 'includes/sidebar.php' ?>
+    <?php include 'includes/sidebar.php' ?>
     <div class="main-panel">
         <div class="content">
             <div class="row center">
@@ -28,15 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                     <div class="col-md-6 pr-md-1">
                                         <div class="form-group">
                                             <label>Seat Number</label>
-                                            <input type="text" class="form-control" placeholder="Seat Number"
-                                                name="seat_number">
+                                            <input type="text" class="form-control" placeholder="Seat Number" name="seat_number">
                                         </div>
                                     </div>
                                     <div class="col-md-6 pl-md-1">
                                         <div class="form-group">
                                             <label>Ticket ID</label>
-                                            <input type="text" class="form-control" placeholder="Ticket ID"
-                                                name="ticket_id">
+                                            <input type="text" class="form-control" placeholder="Ticket ID" name="ticket_id">
                                         </div>
                                     </div>
                                 </div>

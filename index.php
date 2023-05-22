@@ -12,13 +12,13 @@ $db = new DBHelper(DBHelper::getConnection());
     <div class="main-panel">
 
         <?php if (isset($_SESSION["message"])) : ?>
-        <div class="alert alert-success">
-            <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                <i class="tim-icons icon-simple-remove"></i>
-            </button>
-            <b><?= $_SESSION["message"]; ?></b>
-        </div>
-        <?php unset($_SESSION["message"]); ?>
+            <div class="alert alert-success">
+                <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                    <i class="tim-icons icon-simple-remove"></i>
+                </button>
+                <b><?= $_SESSION["message"]; ?></b>
+            </div>
+            <?php unset($_SESSION["message"]); ?>
         <?php endif; ?>
         <div class="content">
             <div class="row">
@@ -53,24 +53,23 @@ $db = new DBHelper(DBHelper::getConnection());
                                     </thead>
                                     <tbody>
                                         <?php foreach ($db->get_users() as $user) : ?>
-                                        <tr>
-                                            <td>
-                                                <?= $user['id'] ?>
-                                            </td>
-                                            <td>
-                                                <?= $user['firstname'] ?>
-                                            </td>
-                                            <td>
-                                                <?= $user['lastname'] ?>
-                                            </td>
-                                            <td>
-                                                <?= $user['dob'] ?>
-                                            </td>
-                                            </td>
-                                            <td>
-                                                <?= $user['nationality'] ?>
-                                            </td>
-                                        </tr>
+                                            <tr>
+                                                <td>
+                                                    <?= $user['id'] ?>
+                                                </td>
+                                                <td>
+                                                    <?= $user['firstname'] ?>
+                                                </td>
+                                                <td>
+                                                    <?= $user['lastname'] ?>
+                                                </td>
+                                                <td>
+                                                    <?= $user['dob'] ?>
+                                                </td>
+                                                <td>
+                                                    <?= $user['nationality'] ?>
+                                                </td>
+                                            </tr>
                                         <?php endforeach; ?>
                                     </tbody>
                                 </table>
@@ -105,20 +104,20 @@ $db = new DBHelper(DBHelper::getConnection());
                                     </thead>
                                     <tbody>
                                         <?php foreach ($db->get_admins() as $admin) : ?>
-                                        <tr>
-                                            <td>
-                                                <?= $admin['id'] ?>
-                                            </td>
-                                            <td>
-                                                <?= $admin['email'] ?>
-                                            </td>
-                                            <td>
-                                                <?= $admin['password'] ?>
-                                            </td>
-                                            <td class="text-center">
-                                                <?= $admin['info_id'] ?>
-                                            </td>
-                                        </tr>
+                                            <tr>
+                                                <td>
+                                                    <?= $admin['id'] ?>
+                                                </td>
+                                                <td>
+                                                    <?= $admin['email'] ?>
+                                                </td>
+                                                <td>
+                                                    <?= $admin['password'] ?>
+                                                </td>
+                                                <td class="text-center">
+                                                    <?= $admin['info_id'] ?>
+                                                </td>
+                                            </tr>
                                         <?php endforeach; ?>
                                     </tbody>
                                 </table>
@@ -153,20 +152,20 @@ $db = new DBHelper(DBHelper::getConnection());
                                     </thead>
                                     <tbody>
                                         <?php foreach ($db->get_crews() as $crew) : ?>
-                                        <tr>
-                                            <td>
-                                                <?= $crew['id'] ?>
-                                            </td>
-                                            <td>
-                                                <?= $crew['position'] ?>
-                                            </td>
-                                            <td>
-                                                <?= $crew['experience'] ?>
-                                            </td>
-                                            <td class="text-center">
-                                                <?= $crew['info_id'] ?>
-                                            </td>
-                                        </tr>
+                                            <tr>
+                                                <td>
+                                                    <?= $crew['id'] ?>
+                                                </td>
+                                                <td>
+                                                    <?= $crew['position'] ?>
+                                                </td>
+                                                <td>
+                                                    <?= $crew['experience'] ?>
+                                                </td>
+                                                <td class="text-center">
+                                                    <?= $crew['info_id'] ?>
+                                                </td>
+                                            </tr>
                                         <?php endforeach; ?>
                                     </tbody>
                                 </table>
@@ -201,20 +200,20 @@ $db = new DBHelper(DBHelper::getConnection());
                                     </thead>
                                     <tbody>
                                         <?php foreach ($db->get_passengers() as $passenger) : ?>
-                                        <tr>
-                                            <td>
-                                                <?= $passenger['id'] ?>
-                                            </td>
-                                            <td>
-                                                <?= $passenger['seat_number'] ?>
-                                            </td>
-                                            <td class="text-center">
-                                                <?= $passenger['ticket_id'] ?>
-                                            </td>
-                                            <td class="text-center">
-                                                <?= $passenger['info_id'] ?>
-                                            </td>
-                                        </tr>
+                                            <tr>
+                                                <td>
+                                                    <?= $passenger['id'] ?>
+                                                </td>
+                                                <td>
+                                                    <?= $passenger['seat_number'] ?>
+                                                </td>
+                                                <td class="text-center">
+                                                    <?= $passenger['ticket_id'] ?>
+                                                </td>
+                                                <td class="text-center">
+                                                    <?= $passenger['info_id'] ?>
+                                                </td>
+                                            </tr>
                                         <?php endforeach; ?>
                                     </tbody>
                                 </table>
@@ -249,20 +248,20 @@ $db = new DBHelper(DBHelper::getConnection());
                                     </thead>
                                     <tbody>
                                         <?php foreach ($db->get_aircrafts() as $aircraft) : ?>
-                                        <tr>
-                                            <td>
-                                                <?= $aircraft['id'] ?>
-                                            </td>
-                                            <td>
-                                                <?= $aircraft['model'] ?>
-                                            </td>
-                                            <td class="text-center">
-                                                <?= $aircraft['capacity'] ?>
-                                            </td>
-                                            <td class="text-center">
-                                                <?= $aircraft['manufacturer'] ?>
-                                            </td>
-                                        </tr>
+                                            <tr>
+                                                <td>
+                                                    <?= $aircraft['id'] ?>
+                                                </td>
+                                                <td>
+                                                    <?= $aircraft['model'] ?>
+                                                </td>
+                                                <td class="text-center">
+                                                    <?= $aircraft['capacity'] ?>
+                                                </td>
+                                                <td class="text-center">
+                                                    <?= $aircraft['manufacturer'] ?>
+                                                </td>
+                                            </tr>
                                         <?php endforeach; ?>
                                     </tbody>
                                 </table>
@@ -297,20 +296,20 @@ $db = new DBHelper(DBHelper::getConnection());
                                     </thead>
                                     <tbody>
                                         <?php foreach ($db->get_tickets() as $tickets) : ?>
-                                        <tr>
-                                            <td>
-                                                <?= $tickets['id'] ?>
-                                            </td>
-                                            <td>
-                                                <?= $tickets['passenger_id'] ?>
-                                            </td>
-                                            <td class="text-center">
-                                                <?= $tickets['seat_number'] ?>
-                                            </td>
-                                            <td class="text-center">
-                                                <?= $tickets['arrival_date'] ?>
-                                            </td>
-                                        </tr>
+                                            <tr>
+                                                <td>
+                                                    <?= $tickets['id'] ?>
+                                                </td>
+                                                <td>
+                                                    <?= $tickets['passenger_id'] ?>
+                                                </td>
+                                                <td class="text-center">
+                                                    <?= $tickets['seat_number'] ?>
+                                                </td>
+                                                <td class="text-center">
+                                                    <?= $tickets['arrival_date'] ?>
+                                                </td>
+                                            </tr>
                                         <?php endforeach; ?>
                                     </tbody>
                                 </table>

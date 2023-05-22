@@ -6,14 +6,14 @@ include 'includes/security.php';
 $db = new DBHelper(DBHelper::getConnection());
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  $db->add_ticket($_POST["passenger_id"], $_POST["seat_number"], $_POST["arrival_date"]);
-  header('Location: index.php');
+    $db->add_ticket($_POST["passenger_id"], $_POST["seat_number"], $_POST["arrival_date"]);
+    header('Location: index.php');
 }
 
 ?>
 
 <div class="wrapper">
-    <?= include 'includes/sidebar.php' ?>
+    <?php include 'includes/sidebar.php' ?>
     <div class="main-panel">
         <div class="content">
             <div class="row center">
@@ -44,7 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                     <div class="col-md-6 pr-md-1">
                                         <div class="form-group">
                                             <label>Arrival Date</label>
-                                            <input type="date" class="form-control" placeholder="Arrival Date" name="arrival_date">
+                                            <input type="date" class="form-control" placeholder="Arrival Date"
+                                                name="arrival_date">
                                         </div>
                                     </div>
                                 </div>

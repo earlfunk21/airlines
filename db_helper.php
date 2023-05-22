@@ -10,11 +10,32 @@ class DBHelper extends Database
         $this->conn = $conn;
     }
 
-    function add_user($firstname, $lastname, $dob, $nationality)
+    function add_personal_info($firstname, $lastname, $dob, $nationality)
     {
         return $this->query("INSERT INTO tblpersonalinfo (id, firstname, lastname, dob, nationality)
                                 VALUES (NULL, '$firstname', '$lastname', '$dob', '$nationality')");
     }
+
+    function update_personal_info($id, $firstname, $lastname, $dob, $nationality)
+    {
+        return $this->query("UPDATE tblpersonalinfo 
+                                SET firstname =  '$firstname', lastname = '$lastname', dob = '$dob', nationality = '$nationality'
+                                WHERE id = $id ");
+    }
+
+    function get_personal_info_by_id($id)
+    {
+        $sql = "SELECT * FROM tblpersonalinfo WHERE id = $id";
+        $rs = $this->query($sql);
+        $row = $rs->fetch_row();
+        return array(
+            "firstname" => $row[1],
+            "lastname" => $row[2],
+            "dob" => $row[3],
+            "nationality" => $row[4]
+        );
+    }
+
     function add_admin($email, $password, $info_id)
     {
         return $this->query("INSERT INTO tbladmin (id, email, password, info_id)

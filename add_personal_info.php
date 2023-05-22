@@ -6,21 +6,21 @@ include 'includes/security.php';
 $db = new DBHelper(DBHelper::getConnection());
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  $db->add_user($_POST["firstname"], $_POST["lastname"], $_POST["dob"], $_POST["nationality"]);
-  header('Location: index.php');
+    $db->add_personal_info($_POST["firstname"], $_POST["lastname"], $_POST["dob"], $_POST["nationality"]);
+    header('Location: index.php');
 }
 
 ?>
 
 <div class="wrapper">
-    <?= include 'includes/sidebar.php' ?>
+    <?php include 'includes/sidebar.php' ?>
     <div class="main-panel">
         <div class="content">
             <div class="row center">
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="title">Add new User</h5>
+                            <h5 class="title">Add new Personal Info</h5>
                         </div>
                         <div class="card-body">
                             <form method="post">

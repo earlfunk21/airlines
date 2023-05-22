@@ -6,14 +6,14 @@ include 'includes/security.php';
 $db = new DBHelper(DBHelper::getConnection());
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  $db->add_aircraft($_POST["model"], $_POST["capacity"], $_POST["manufacturer"]);
-  header('Location: index.php');
+    $db->add_aircraft($_POST["model"], $_POST["capacity"], $_POST["manufacturer"]);
+    header('Location: index.php');
 }
 
 ?>
 
 <div class="wrapper">
-    <?= include 'includes/sidebar.php' ?>
+    <?php include 'includes/sidebar.php' ?>
     <div class="main-panel">
         <div class="content">
             <div class="row center">
@@ -28,8 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                     <div class="col-md-6 pr-md-1">
                                         <div class="form-group">
                                             <label>Model</label>
-                                            <input type="text" class="form-control" placeholder="Model"
-                                                name="model">
+                                            <input type="text" class="form-control" placeholder="Model" name="model">
                                         </div>
                                     </div>
                                     <div class="col-md-6 pl-md-1">
@@ -44,7 +43,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                     <div class="col-md-6 pr-md-1">
                                         <div class="form-group">
                                             <label>Manufacturer</label>
-                                            <input type="text" class="form-control" placeholder="Manufacturer" name="manufacturer">
+                                            <input type="text" class="form-control" placeholder="Manufacturer"
+                                                name="manufacturer">
                                         </div>
                                     </div>
                                 </div>

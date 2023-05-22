@@ -6,14 +6,14 @@ include 'includes/security.php';
 $db = new DBHelper(DBHelper::getConnection());
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  $db->add_crew($_POST["position"], $_POST["experience"], $_POST["info_id"]);
-  header('Location: index.php');
+    $db->add_crew($_POST["position"], $_POST["experience"], $_POST["info_id"]);
+    header('Location: index.php');
 }
 
 ?>
 
 <div class="wrapper">
-    <?= include 'includes/sidebar.php' ?>
+    <?php include 'includes/sidebar.php' ?>
     <div class="main-panel">
         <div class="content">
             <div class="row center">
@@ -44,7 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                     <div class="col-md-6 pr-md-1">
                                         <div class="form-group">
                                             <label>Information ID</label>
-                                            <input type="Text" class="form-control" placeholder="Info ID" name="info_id">
+                                            <input type="Text" class="form-control" placeholder="Info ID"
+                                                name="info_id">
                                         </div>
                                     </div>
                                 </div>
