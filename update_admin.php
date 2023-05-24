@@ -1,16 +1,15 @@
 <?php
 require_once 'includes/header.php';
 require_once 'db_helper.php';
-include 'includes/security.php';
 
 $db = new DBHelper(DBHelper::getConnection());
+include 'includes/security.php';
 
 $id = $_GET['id'];
-
-$row = $db->get_personal_info_by_id($id);
+$row = $db->get_admin_id($id);
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $db->update_personal_info($id, $_POST["firstname"], $_POST["lastname"], $_POST["dob"], $_POST["nationality"]);
+    $db->update_admin($id, $_POST["email"], $_POST["password"], $_POST["info_id"]);
     header('Location: index.php');
 }
 
@@ -24,41 +23,35 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="title">Update Personal Info</h5>
+                            <h5 class="title">Add new Admin</h5>
                         </div>
                         <div class="card-body">
                             <form method="post">
                                 <div class="row">
                                     <div class="col-md-6 pr-md-1">
                                         <div class="form-group">
-                                            <label>First Name</label>
-                                            <input type="text" class="form-control" placeholder="First Name" name="firstname" value="<?= $row['firstname'] ?>">
+                                            <label>Email</label>
+                                            <input type="email" class="form-control" placeholder="Email Address" name="email" value="<?= $row['email'] ?>">
                                         </div>
                                     </div>
                                     <div class="col-md-6 pl-md-1">
                                         <div class="form-group">
-                                            <label>Last Name</label>
-                                            <input type="text" class="form-control" placeholder="Last Name" name="lastname" value="<?= $row['lastname'] ?>">
+                                            <label>Password</label>
+                                            <input type="text" class="form-control" placeholder="Password" name="password" value="<?= $row['password'] ?>">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 pr-md-1">
                                         <div class="form-group">
-                                            <label>Date of Birth</label>
-                                            <input type="date" class="form-control" placeholder="Birth date" name="dob" value="<?= $row['dob'] ?>">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 pr-md-1">
-                                        <div class="form-group">
-                                            <label>Nationality</label>
-                                            <input type="text" class="form-control" placeholder="ex: Filipino" name="nationality" value="<?= $row['nationality'] ?>">
+                                            <label>Information ID</label>
+                                            <input type="Text" class="form-control" placeholder="Info ID" name="info_id" value="<?= $row['info_id'] ?>">
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-fill btn-primary">Update Personal Info</button>
+                                    <button type="submit" class="btn btn-fill btn-primary">Update Admin</button>
                                 </div>
                             </form>
                         </div>
